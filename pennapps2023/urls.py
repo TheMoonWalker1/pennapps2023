@@ -20,4 +20,5 @@ from backend import views as b_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', b_views.front, name='front')
 ]
