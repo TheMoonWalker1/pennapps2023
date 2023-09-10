@@ -7,6 +7,84 @@ body{
 
 
 #snowpastName{
-    font-size:100%;
+    font-size:70px;
+    line-height: 1px;
+}
 
+.introduction{
+    background: radial-gradient(#262b69, #000000 50%);
+    
+    padding: 300px;
+}
+
+#try{
+    /* outline: #FFFFFF; */
+    border-radius: 50px;
+    padding: 10px 25px 10px 25px;
+    font-size: 28px;
+    background-color: #585c9b; /* For browsers that do not support gradients */
+    color: white;
+    text-decoration: none;
+}
+
+#try:hover{
+    background-color: #262b69;
+    
+}
+
+#tagline{
+    font-size: 36px;
+}
+
+
+h2{
+    font-size: 40px;
+}
+
+#questionBox{
+    padding: 100px ;
+}
+
+#questionToAsk{
+    padding: 100px;
+}
+
+#infoBoxes{
+    display:flex;
+    padding: 0px;
+    margin: 0px;
+}
+
+#infoBoxes div{
+    outline: #282F8E;
+    background: radial-gradient(#171b59, #000000 75%);
+    filter: drop-shadow(4px 4px 4px #5B61AF );
+    margin: 100px;
+    padding: 50px;
+
+}
+
+#infoBoxes p{
+    font-size: 24px;
+}
+
+
+#solutionBoxes div{
+    outline: #282F8E;
+    background: radial-gradient(#171b59, #000000 75%);
+    filter: drop-shadow(4px 4px 4px #5B61AF );
+    margin: 100px;
+    padding: 50px;
+
+}
+
+#solutionBoxes p{
+    font-size: 24px;
+}
+
+
+
+#solutionBoxes h2{
+    line-height: 1px;
+    margin: -20px;
 }
