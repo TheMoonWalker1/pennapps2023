@@ -14,7 +14,7 @@ data = pd.read_csv(file_path)
 # Step 2: Preprocess the data
 # Assuming you want to predict 'swe_snotel'
 # Remove unnecessary columns
-data = data[['m', 'day', 'eto', 'pr', 'rmax', 'rmin', 'tmmn', 'tmmx', 'vpd', 'vs', 'lat', 'lon', 'elevation', 'aspect', 'curvature', 'slope', 'eastness', 'northness', 'swe_snotel']]
+data = data[['m', 'day', 'eto', 'pr', 'rmax', 'rmin', 'tmmn', 'tmmx', 'vpd', 'vs', 'lat', 'lon', 'swe_snotel']]
 
 # Fill missing values if necessary
 data = data.fillna(0)  # You can change this depending on your data and preprocessing needs
