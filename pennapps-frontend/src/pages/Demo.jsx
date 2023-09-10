@@ -3,10 +3,19 @@ import React from 'react';
 function Demo(){
     return(
         <body>
-            <div class="homepgparent">
-                <p>Hi!!!</p>
-            </div>
-        </body>
+            <p>The application requires the identification of </p>
+            <form>
+                <label for="longitude">Longitude
+                    <input type="text" id="longitude" name="longitude"/>
+                </label>
+                
+                <label for="Latitude">Latitude
+                    <input type="text" id="latitude" name="latitude"/>
+                </label>
+                
+                <input type="submit" value="Submit"/>
+            </form>
+        </body> 
         
         
     );
