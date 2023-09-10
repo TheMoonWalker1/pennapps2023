@@ -9,7 +9,7 @@ function Navbar(){
         
         <div class="menubutton">
             <nav class="nav">
-                <ul class="pt-25">
+                <ul>
                     <li>
                         <a href="/">Home</a>
                     </li>
