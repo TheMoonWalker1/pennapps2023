@@ -40,3 +40,18 @@ print(f"Mean Squared Error (MSE): {mse:.4f}")
 # Calculate R-squared (R2) score
 r2 = r2_score(y_test, predictions)
 print(f"R-squared (R2) Score: {r2:.4f}")
+
+# # Get the XGBoost booster
+# booster = xgb_model.get_booster()
+#
+# # # Get the tree structure as a list of strings
+# tree_structure = booster.get_dump()
+# #
+# # # Print the tree structure
+# for i, tree in enumerate(tree_structure):
+#     print(f"Tree {i}:\n{tree}\n")
+import pickle
+
+# Export the XGBoost model to a file
+with open('xgb_model.pkl', 'wb') as model_file:
+    pickle.dump(xgb_model, model_file)
