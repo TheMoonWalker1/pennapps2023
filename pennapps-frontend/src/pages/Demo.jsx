@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function MyComponent() {
-  const [latitude, setLatitude] = useState(0); // Initialize with default values
+  const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
+  const [responseText, setResponseText] = useState('');
+  const [loading, setLoading] = useState(false); // Initialize loading state
 
   const sendRequest = () => {
-    // Fetch the CSRF token from the Django server by making a GET request
+    setLoading(true); // Set loading to true when the request starts
+
     axios.get('/csrf/').then((response) => {
-      // Extract the CSRF token from the response
       const csrfToken = response.data.csrfToken;
 
-      // Include the CSRF token in the request headers
       axios
         .post(
           '/ajax/',
@@ -26,12 +27,14 @@ function MyComponent() {
           }
         )
         .then((response) => {
-          // Handle the response from Django here
           console.log(response.data);
+          setResponseText(response.data);
         })
         .catch((error) => {
-          // Handle any errors here
           console.error(error);
+        })
+        .finally(() => {
+          setLoading(false); // Set loading to false when the request is completed (whether it's successful or not)
         });
     });
   };
@@ -49,6 +52,17 @@ function MyComponent() {
         onChange={(e) => setLongitude(e.target.value)}
       />
       <button onClick={sendRequest}>Send Request</button>
+
+      {/* Display loading spinner while loading */}
+      {loading && <div>Loading...</div>}
+
+      {/* Display the response text */}
+      {!loading && responseText && (
+        <div>
+          <h2>Response:</h2>
+          <p>{responseText}</p>
+        </div>
+      )}
     </div>
   );
 }

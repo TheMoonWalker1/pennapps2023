@@ -22,5 +22,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path('(?!.*(static))', TemplateView.as_view(template_name="index.html", content_type="text/html"))
+    path('ajax/', b_views.ajax, name='ajax'),
+    path('csrf/', b_views.get_csrf_token, name='csrf'),
+    re_path('(?!.*(static))', TemplateView.as_view(template_name="index.html", content_type="text/html")),
 ]
