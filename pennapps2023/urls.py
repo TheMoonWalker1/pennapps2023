@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from backend import views as b_views
+from django.urls import re_path
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', b_views.front, name='front')
+    re_path('(?!.*(static))', TemplateView.as_view(template_name="index.html", content_type="text/html"))
 ]
