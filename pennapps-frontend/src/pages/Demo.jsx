@@ -54,13 +54,20 @@ function MyComponent() {
       <button onClick={sendRequest}>Send Request</button>
 
       {/* Display loading spinner while loading */}
-      {loading && <div>Loading...</div>}
+      {loading && <div>Loading... (takes approximately 30-60 seconds to retrieve and process most recent data)</div>}
 
       {/* Display the response text */}
       {!loading && responseText && (
         <div>
-          <h2>Response:</h2>
-          <p>{responseText}</p>
+          <h2 style="color: white;">Response:</h2>
+          <p style="color: white;">{responseText}</p>
+        </div>
+      )}
+
+      {/* Display an error message if the response is empty */}
+      {!loading && !responseText && (
+        <div>
+          <h2 style="color: white;">No Response Received, please try again</h2>
         </div>
       )}
     </div>
